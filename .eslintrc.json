@@ -1,0 +1,18 @@
+{
+	"extends": "@sapphire",
+	"rules": {
+		"@typescript-eslint/dot-notation": "off",
+		"@typescript-eslint/no-base-to-string": "off",
+		"@typescript-eslint/unbound-method": "off",
+		"@typescript-eslint/member-ordering": "off",
+		"no-negated-condition": "off"
+	},
+	"overrides": [
+		{
+			"files": ["src/commands/**/*.ts"],
+			"rules": {
+				"@typescript-eslint/require-await": 0
+			}
+		}
+	]
+}
