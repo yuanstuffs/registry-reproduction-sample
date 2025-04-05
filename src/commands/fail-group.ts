@@ -2,15 +2,10 @@ import { ApplyOptions } from '@sapphire/decorators';
 import { Command, type ApplicationCommandRegistry } from '@sapphire/framework';
 import { ApplicationIntegrationType, InteractionContextType, SlashCommandBuilder } from 'discord.js';
 
-/**
- * If not adding subcommand(s), it will register with no errors.
- * Did vlad not diff subcommands?
- */
 @ApplyOptions<Command.Options>({
-	description: 'This will fail to register.'
+	description: 'A command that will fail to register'
 })
 export class UserCommand extends Command {
-	// Not gonna reply to the interaction as this will fail to register in the registry anyway.
 	public override chatInputRun() {}
 
 	public override registerApplicationCommands(registry: ApplicationCommandRegistry) {
@@ -19,7 +14,12 @@ export class UserCommand extends Command {
 			.setDescription(this.description)
 			.setContexts(InteractionContextType.Guild)
 			.setIntegrationTypes(ApplicationIntegrationType.GuildInstall)
-			.addSubcommand((builder) => builder.setName('failure').setDescription('Failure'));
+			.addSubcommandGroup((builder) =>
+				builder
+					.setName('g')
+					.setDescription('group')
+					.addSubcommand((builder) => builder.setName('sub').setDescription('sub'))
+			);
 
 		registry.registerChatInputCommand(builder);
 	}

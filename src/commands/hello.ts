@@ -2,13 +2,6 @@ import { ApplyOptions } from '@sapphire/decorators';
 import { Command, type ApplicationCommandRegistry, type Awaitable } from '@sapphire/framework';
 import { ApplicationIntegrationType, InteractionContextType, SlashCommandBuilder } from 'discord.js';
 
-/* @RegisterChatInputCommand((builder, command) =>
-	builder
-		.setName(command.name)
-		.setDescription(command.description)
-		.setContexts(InteractionContextType.Guild)
-		.setIntegrationTypes(ApplicationIntegrationType.GuildInstall)
-) */
 @ApplyOptions<Command.Options>({
 	description: 'Sends a hello message'
 })
