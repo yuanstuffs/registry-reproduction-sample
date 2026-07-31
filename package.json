@@ -17,18 +17,18 @@
     "@sapphire/plugin-logger": "^4.1.0",
     "@skyra/env-utilities": "^2.0.1",
     "colorette": "^2.0.20",
-    "discord.js": "^14.26.4"
+    "discord.js": "^14.27.0"
   },
   "devDependencies": {
     "@sapphire/eslint-config": "^5.0.6",
     "@sapphire/ts-config": "^5.0.3",
-    "@swc/core": "^1.15.43",
+    "@swc/core": "^1.15.46",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
-    "prettier": "^3.9.3",
+    "prettier": "^3.9.6",
     "tsup": "^8.5.1",
     "typescript": "~5.4.5"
   },
-  "packageManager": "yarn@4.17.0"
+  "packageManager": "yarn@4.17.1"
 }
